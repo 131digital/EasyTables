@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EasyTables Documentation</title>
+	<link rel="stylesheet" href="../styles/style.css" type="text/css">
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../syntaxhighlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<style>
+
+	    td{
+	        padding:10px;
+	    }
+	    .defaul_v{
+	        color:#06BA00;
+	        font-weight:bold;
+	    }
+	    .format{
+	        color:#4249FF;
+	        font-weight:bold;
+	    }
+	    .examples{
+	        color:#E86100;
+	        font-weight:bold;
+	    }
+	    table.parameters{
+	        border-collapse:collapse;
+	        table-layout:fixed;
+	        max-width:800px;
+	        margin:auto;
+	    }
+	    .parameters{
+	        border:2px solid #000;
+	    }
+	    .parameters td, th{
+	        border:1px solid #000;
+	    }
+	    .parameters th{
+	        font-weight:bolder;
+	        font-size:26px;
+	        background:#E8C900;
+	    }
+	    .parameters tr td:first-child{
+	        font-weight:bolder;
+	        font-size:18px;
+	    }
+	    p{
+	        text-align:justify;
+	    }
+	    p.t, ul{
+	        margin-left:50px;
+	        margin-right:50px;
+	    }
+	    .mandatory{
+	        font-weight:normal;
+	        font-size:12px;
+	        color:#E86100;
+	    }
+	</style>
+</head>
+<body>
+	<div id="top"><div>EasyTables</div></div>
+    	<ul id="navigation">
+            <li><a href="../index.php">Main</a></li>
+            <li class="sub">
+             
+                <a href="#">Examples</a>
+                    <ul>
+                        <li><a href="../Examples/examplePage1.php">Example 1</a></li>
+                        <li><a href="../Examples/examplePage2.php">Example 2</a></li>
+                        <li><a href="../Examples/examplePage3.php">Example 3</a></li>
+                        <li><a href="../Examples/examplePage4.php">Example 4</a></li>
+                        <li><a href="../Examples/example5/examplePage5.php">Example 5</a></li>
+                    </ul>
+                 
+            </li>
+                     
+            <li class="sub">
+                <a href="#">Styles</a>
+                    <ul>
+                        <li><a href="../Examples/dark.php">Dark</a></li>
+                        <li><a href="../Examples/white-gray.php">White-Gray</a></li>
+                        <li><a href="../Examples/minimalist.php">Minimalist</a></li>
+                    </ul>
+            </li>
+            <li class="sub">
+             
+                <a href="#">Documentation</a>
+                    <ul>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="jsParameters.html">JS Parameters</a></li>
+                        <li><a href="phpParameters.html">PHP Parameters</a></li>
+                    </ul>
+                 
+            </li>
+        </ul>
+<div id="container">
+    <table>
+    <tr><td colspan="2" style="text-align:center"><h1>EasyTables v1.0 Documentation</h1></td></tr>
+    <tr><td style="width:40%">Updated: 10/01/14</br>By: enri_pin</br>Email: <a href="mailto:enri_pin@yahoo.com">enri_pin@yahoo.com</a></br>Other Project: <a href="http://codecanyon.net/item/pdo-multidb-info-manager/5641189?WT.ac=category_item&WT.seg_1=category_item&WT.z_author=enri_pin">PDO Multi-Info Manager</a></td><td><p>If you have any questions that are beyond the scope of this help file or if you need a freelance work, please feel free to email me. If you like this file please leave me a vote. Thanks so much!</p></td></tr>
+    <tr><td colspan="2">
+        <h2>Features:</h2>
+        <p class="t">This script allows you to show, export, and edit the information of a database in a easy and interactive way and with several configuration options. You only need to write a few lines of code and you'll have a wonderful display of the data in a table. You'll have a table with options to do searchs, change the number of rows to be shown, sort the data according to a column, export the information and XML, CSV, Excel and PDF files, edit the info inline, etc.</p>
+    	<ul>    
+    	    <li>You can use the script with MySQL, PostgreSQL, SQLServer and SQLite.</li>
+    	    <li>The script use PDO for connect to the database.</li>
+    	    <li>Protected agains SQL injection.</li>
+    	    <li>You only need to set the connection parameters and select a table as source of information to use it.</li>
+    	    <li>You can use a SQL query as information source. It allows you to display join queries and almost all sql queries result.</li>
+    	    <li>It offers several parameters to customize the way the information is displayed. Ej. Which columns will be displayed, the column header name that will be shown, the width and color of each column, etc.</li>
+    	    <li>Use ajax for a more interactive application.</li>
+    	    <li>Allows you to export the data in XLS, CSV, PDF and Excel file with only a  click.</li>
+    	    <li>You can configure a friendly display for the information.</li>
+    	    <li>You can delete, insert and update the information in a interactive way.</li>
+    	    <li>Very interactive tables with pager and sort options.</li>
+    	    <li>Several predesigned css files.</li>
+    	    <li>Easy to configure.</li>
+    	    <li>Commented code, easy to change.</li>
+    	</ul>
+    </td></tr>
+    <tr><td colspan="2">
+        <h2>Setting Up:</h2>
+		<p class="t">Copy the directory <strong>easyTables</strong> to the root directory of your web site</p>
+        <p class="t">The first thing you need to do is import the js and css files in the header of the file where you'll use this script. The second row corresponds to the default table style that you want to use. You can change <a href="../Examples/white-gray.php">white-gray.css</a> for example by <a href="../Examples/dark.php">dark.css</a> or use a css style that you created.</p>
+        <pre class="brush: js;">
+            &lthead&gt
+                &ltlink rel="stylesheet" href="easyTables/css/easyTable.css" type="text/css"&gt
+	            &ltlink rel="stylesheet" href="easyTables/css/white-gray.css" type="text/css"&gt
+            	&ltscript src="easyTables/js/jquery.js" type="text/javascript"&gt&lt/script&gt
+                &ltscript src="easyTables/js/bootstrap-modal.js"&gt&lt/script&gt
+            	&ltscript src="easyTables/js/easyTable.js" type="text/javascript"&gt&lt/script&gt
+            &lt/head&gt
+        </pre>
+        <p class="t">Then in the body of the page in the place where you want to display the table:</p>
+        <pre class="brush: js;">    
+            &ltdiv id="tableContainer"&gt&lt/div&gt
+            &ltscript type="text/javascript"&gt	
+                $("#tableContainer").easyTable({
+                    configFile:"fileName.php", //Name of the php configuration file
+                    
+                    /*Other Parameters*/
+                    parameter1:value,
+                    parameter2:value,
+                            .
+                            .
+                            .
+                });	
+            &lt/script&gt
+        </pre>
+        <p class="t">"fileName" is the name of the php file that you'll create inside the directory "easyTables/configs"</p>
+        <p class="t"><a href="jsParameters.html">Here you have a list of the javascript configuration file parameters that you can use.</a></p>
+        
+        <p class="t">After this you have to create a new php file inside the directory "easyTables/configs/" with the same name that you used in the parameter "configFile".</p>
+        <p class="t">Here you can see an example of the content of this file: fileName.php</p>
+        <pre class="brush: js;">    
+            &lt?php
+            	$db='mysql'; //Database Manager
+            	$host='localhost'; //Host where is placed the database
+            	$dbname='test'; //Database Name
+            	$table='books'; //Table source of information
+            	$user="user"; //Database user name
+            	$pass="password"; //Database user password
+            	
+            	/*Other Parameters*/
+            	$parameter1=value;
+            	$parameter2=value;
+            	        .
+            	        .
+            	        .
+            ?&gt
+        </pre>
+        <p class="t"><a href="phpParameters.html">Here you have a list of the php configuration file parameters that you can use.</a></p>
+        <p class="t">Now you can try your web page in the navigator.</a>
+    </td></tr>
+	<tr><td colspan="2">
+        <h2>Using PostgreSQL, SQLServer or SQLite as Database Manager:</h2>
+		<p class="t">This script uses PDO for the database connections. By default if you use MySQL the extension is already enabled, but if you will use PostgreSQL, SQLServer or SQLite maybe you'll need to enable them by yourself in the <strong>php.ini</strong> file.</p>
+		<p class="t">For use SQLServer you have to download and install <a href="http://www.microsoft.com/en-us/download/details.aspx?id=20098">The Microsoft Drivers 3.0 for PHP</a> and for PHP 5.4 or later you will need <a href="http://www.microsoft.com/en-us/download/details.aspx?id=29065">Microsoft SQL Server 2012 Native Client</a> too</p>
+    </td></tr>
+    </table>
+	
+</div>
+</body>
+</html>

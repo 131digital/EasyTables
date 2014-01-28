@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EasyTables Documentation</title>
+	<link rel="stylesheet" href="../styles/style.css" type="text/css">
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../syntaxhighlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<style>
+
+	    td{
+	        padding:10px;
+	    }
+	    .defaul_v{
+	        color:#06BA00;
+	        font-weight:bold;
+	    }
+	    .format{
+	        color:#4249FF;
+	        font-weight:bold;
+	    }
+	    .examples{
+	        color:#E86100;
+	        font-weight:bold;
+	    }
+	    table.parameters{
+	        border-collapse:collapse;
+	        table-layout:fixed;
+	        max-width:800px;
+	        margin:auto;
+	    }
+	    .parameters{
+	        border:2px solid #000;
+	    }
+	    .parameters td, th{
+	        border:1px solid #000;
+	    }
+	    .parameters th{
+	        font-weight:bolder;
+	        font-size:26px;
+	        background:#E8C900;
+	    }
+	    .parameters tr td:first-child{
+	        font-weight:bolder;
+	        font-size:18px;
+	    }
+	    p{
+	        text-align:justify;
+	    }
+	    p.t, ul{
+	        margin-left:50px;
+	        margin-right:50px;
+	    }
+	    .mandatory{
+	        font-weight:normal;
+	        font-size:12px;
+	        color:#E86100;
+	    }
+	</style>
+</head>
+<body>
+	<div id="top"><div>EasyTables</div></div>
+    	<ul id="navigation">
+            <li><a href="../index.php">Main</a></li>
+            <li class="sub">
+             
+                <a href="#">Examples</a>
+                    <ul>
+                        <li><a href="../Examples/examplePage1.php">Example 1</a></li>
+                        <li><a href="../Examples/examplePage2.php">Example 2</a></li>
+                        <li><a href="../Examples/examplePage3.php">Example 3</a></li>
+                        <li><a href="../Examples/examplePage4.php">Example 4</a></li>
+                        <li><a href="../Examples/example5/examplePage5.php">Example 5</a></li>
+                    </ul>
+                 
+            </li>
+                     
+            <li class="sub">
+                <a href="#">Styles</a>
+                    <ul>
+                        <li><a href="../Examples/dark.php">Dark</a></li>
+                        <li><a href="../Examples/white-gray.php">White-Gray</a></li>
+                        <<li><a href="../Examples/minimalist.php">Minimalist</a></li>
+                    </ul>
+            </li>
+            <li class="sub">
+             
+                <a href="#">Documentation</a>
+                    <ul>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="jsParameters.html">JS Parameters</a></li>
+                        <li><a href="phpParameters.html">PHP Parameters</a></li>
+                    </ul>
+                 
+            </li>
+        </ul>
+<div id="container">
+        <center><h2>List of Javascript Configuration Parameters</h2></center>
+        <table class="parameters" id="js_params">
+        <tr><th>Parameter</th><th>Description</th></tr>
+        <tr><td>configFile</br><span class="mandatory">Mandatory</span><td><p>This parameters corresponds to the name of the php configuration file inside the directory "easyTables/configs/".</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "fileName.php"</br><span class="examples">Examples</span>: <pre class="brush: js;">configFile="config1.php", | configFile:"example1.php",</pre></td></tr>
+        <tr><td>phpRute</br><span class="mandatory">Optional | Mandatory</span></td><td><p>This parameters corresponds to the relative rute of the "easyTables/php/" directory regarding to the file where we are using the script. This parameter will be mandatory when you're using the script in different directory levels. You can change the default value in easyTables/js/easyTable.js</p></br><span class="defaul_v">Default Value</span>: "../easyTables/php/"</br><span class="format">Format</span>: "relative path to the easyTables/php/ directory"</br><span class="examples">Example</span>: <span class="exam"><a href="../Examples/example5/examplePage5.php">Working Example</a></span><pre class="brush: js;">phpRute:"../../easyTables/php/",</pre></td></tr>
+        <tr><td>tableWidth</br><span class="mandatory">Optional</span></td><td><p>With this parameters you can change the dafault width of the table.</p> </br><span class="defaul_v">Default Value</span>: "800px"</br><span class="format">Format</span>: "#px", "#%", "#em"</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span><pre class="brush: js;">tableWidth:"900px", | tableWidth:"50%", | tableWidth:"300em",</pre></td></tr>
+        <tr><td>nPResults</br><span class="mandatory">Optional</span></td><td><p>Use this parameters to change the possible number of results to be displayed in the table</p></br><span class="defaul_v">Default Value</span>: [10,20,30]</br><span class="format">Format</span>: [#, #, #, #]</br><span class="examples">Example</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span><pre class="brush: js;">nPResults:[10,50,100,200],</pre></td></tr>
+        <tr><td>searchFields</br><span class="mandatory">Optional</span></td><td><p>Use this parameter if you want to restrict the search to the fields that you choose of a table, instead of all the fields.</p></br><span class="defaul_v">Default Value</span>: Array of all the fields</br><span class="format">Format</span>: ["field_name", "field_name", ...]</br><span class="examples">Example</span>: <span class="exam"><a href="../Examples/examplePage3.php">Working Example</a></span><pre class="brush: js;">SearchField:["first_name", "last_name"],</pre></td></tr>
+        <tr><td>autoSearch</br><span class="mandatory">Optional</span></td><td><p>In this field you specify if you want to disable the autosearch and show a button to trigger the search</p></br><span class="defaul_v">Default Value</span>: true</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage3.php">Working Example</a></span><pre class="brush: js;">autoSearch:true, | autoSearch:false,</pre></td></tr>
+        <tr><td>useModal</br><span class="mandatory">Optional</span></td><td><p>This option allows you to show a modal windows for edit or insert a new registry instead of do it in the table.</p></br><span class="defaul_v">Default Value</span>: false</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span><pre class="brush: js;">useModal:true, | useModal:false,</pre></td></tr>
+        <tr><td>textInSingleRow</br><span class="mandatory">Optional</span></td><td><p>This parameter specify if you want to show multiple text rows or not</p></br><span class="defaul_v">Default Value</span>: true</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <pre class="brush: js;">textInSingleRow:true | textInSingleRow:false</pre></td></tr>
+        <tr><td>MultipleTableQuery</br><span class="mandatory">Mandatory (Only for complex sql queries)</span></td><td><p>You need to enable this option when you are using a complex sql as source of information. For example when you are using a join sql query with two or more tables.</p></br><span class="defaul_v">Default Value</span>: false</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/example5/examplePage5.php">Working Example</a></span><pre class="brush: js;">MultipleTableQuery:true, | MultipleTableQuery:false,</pre></td></tr>
+        <tr><td>newRow</br><span class="mandatory">Optional</span></td><td><p>Use this option when you want to disable the option to insert new rows.</p></br><span class="defaul_v">Default Value</span>: true</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span><pre class="brush: js;">newRow:true, | newRow:false,</pre></td></tr>
+        <tr><td>updateRow</br><span class="mandatory">Optional</span></td><td><p>Use this option when you want to disable the option to update rows.</p></br><span class="defaul_v">Default Value</span>: true</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span><pre class="brush: js;">updateRow:true, | updateRow:false,</pre></td></tr>
+        <tr><td>deleteRow</br><span class="mandatory">Optional</span></td><td><p>Use this option when you want to disable the option to delete rows.</p></br><span class="defaul_v">Default Value</span>: true</br><span class="format">Format</span>: true | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span><pre class="brush: js;">deleteRow:true, | deleteRow:false,</pre></td></tr>
+        <tr><td>exportOptions</br><span class="mandatory">Optional</span></td><td><p>Use this option when you don't want to allow to the user to export in all the formats avalaible in this script. Or if you want to disable the option to export data use false as the value of this parameter.</p></br><span class="defaul_v">Default Value</span>: ["csv", "excel", "pdf", "xml"]</br><span class="format">Format</span>: ["format", "format", ..] | false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage3.php">Working Example</a></span><pre class="brush: js;">exportOptions:["csv", "pdf"], | exportOption:false,</pre></td></tr>
+        <tr><td>onDBClick</br><span class="mandatory">Optional</span></td><td><p>This option allows you to change the default behavior when you double click a row. If you have the option update enabled when you double click a row it will show an option to update that row, but you can instead show the detaills of that row.</p></br><span class="defaul_v">Default Value</span>: "default"</br><span class="format">Format</span>: "default" | "update" | "details"</br><span class="examples">Examples</span>: <pre class="brush: js;">onDBClick:"default", | onDBClick:"update", | onDBClick:"details",</pre></td></tr>
+        </table>
+</div>
+</body>
+</html>

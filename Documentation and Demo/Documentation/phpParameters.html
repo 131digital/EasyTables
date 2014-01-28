@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EasyTables Documentation</title>
+	<link rel="stylesheet" href="../styles/style.css" type="text/css">
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../syntaxhighlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+	<style>
+
+	    td{
+	        padding:10px;
+	    }
+	    .defaul_v{
+	        color:#06BA00;
+	        font-weight:bold;
+	    }
+	    .format{
+	        color:#4249FF;
+	        font-weight:bold;
+	    }
+	    .examples{
+	        color:#E86100;
+	        font-weight:bold;
+	    }
+	    table.parameters{
+	        border-collapse:collapse;
+	        table-layout:fixed;
+	        max-width:800px;
+	        margin:auto;
+	    }
+	    .parameters{
+	        border:2px solid #000;
+	    }
+	    .parameters td, th{
+	        border:1px solid #000;
+	    }
+	    .parameters th{
+	        font-weight:bolder;
+	        font-size:26px;
+	        background:#E8C900;
+	    }
+	    .parameters tr td:first-child{
+	        font-weight:bolder;
+	        font-size:18px;
+	    }
+	    p{
+	        text-align:justify;
+	    }
+	    p.t, ul{
+	        margin-left:50px;
+	        margin-right:50px;
+	    }
+	    .mandatory{
+	        font-weight:normal;
+	        font-size:12px;
+	        color:#E86100;
+	    }
+	</style>
+</head>
+<body>
+	<div id="top"><div>EasyTables</div></div>
+    	<ul id="navigation">
+            <li><a href="../index.php">Main</a></li>
+            <li class="sub">
+             
+                <a href="#">Examples</a>
+                    <ul>
+                        <li><a href="../Examples/examplePage1.php">Example 1</a></li>
+                        <li><a href="../Examples/examplePage2.php">Example 2</a></li>
+                        <li><a href="../Examples/examplePage3.php">Example 3</a></li>
+                        <li><a href="../Examples/examplePage4.php">Example 4</a></li>
+                        <li><a href="../Examples/example5/examplePage5.php">Example 5</a></li>
+                    </ul>
+                 
+            </li>
+                     
+            <li class="sub">
+                <a href="#">Styles</a>
+                    <ul>
+                        <li><a href="../Examples/dark.php">Dark</a></li>
+                        <li><a href="../Examples/white-gray.php">White-Gray</a></li>
+                        <li><a href="../Examples/minimalist.php">Minimalist</a></li>
+                    </ul>
+            </li>
+            <li class="sub">
+             
+                <a href="#">Documentation</a>
+                    <ul>
+                        <li><a href="configuration.html">Configuration</a></li>
+                        <li><a href="jsParameters.html">JS Parameters</a></li>
+                        <li><a href="phpParameters.html">PHP Parameters</a></li>
+                    </ul>
+                 
+            </li>
+        </ul>
+<div id="container">
+        <center><h2>List of PHP Configuration Parameters</h2></center>
+        <table class="parameters">
+        <tr><th>Parameter</th><th>Use</th></tr>
+        <tr><td>$db</br><span class="mandatory">Mandatory</span></td><td><p>Database Manager that you'll use in your project</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "mysql"|"sqlserver"|"postgres"|"sqlite"</br><span class="examples">Examples</span>: <pre class="brush: js;">$db="mysql"; | $db="sqlite";</pre></td></tr>
+        <tr><td>$host</br><span class="mandatory">Mandatory (except for sqlite)</span></td><td><p>Host where is placed the database</p></br><span class="defaul_v">Default value</span>: none</br><span class="format">Format</span>: "host"</br><span class="examples">Examples</span>: <pre class="brush: js;">$host="localhost";</pre></td></tr>
+        <tr><td>$port</br><span class="mandatory">Mandatory (only for postgresql)</span></td><td><p>For PostgreSQL you must specify the port that is using. Usually it use 5432 as default</p></br><span class="defaul_v">Default value</span>: none</br><span class="format">Format</span>: "#Port"</br><span class="examples">Examples</span>: <pre class="brush: js;">$port="5432";</pre></td></tr>
+        <tr><td>$dbname</br><span class="mandatory">Mandatory</span></td><td><p>Name of the database that you will use. For sqlite this parameter contains the relative path (from the "easyTables/php/" directory) of the database file.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "databaseName" (for sqlite "relatiPath/databaseFileName")</br><span class="examples">Examples</span>: <pre class="brush: js;">$dbname="dataBaseName"; | $dbname="../../databaseFileName";</pre></td></tr>
+        <tr><td>$table</br><span class="mandatory">Mandatory (except if you use instead $query and won't use the insert, update or delete options)</span></td><td><p>Name of the table source of information. You can use the parameter $query and use a sql query as source of information, but if you will use the option to insert, update and delete information this field will be mandatory.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "tableName"</br><span class="examples">Examples</span>: <pre class="brush: js;">$table="books"; | $table="employees"; | $table="emails";</pre></td></tr>
+        <tr><td>$user</br><span class="mandatory">Mandatory (except for sqlite)</span></td><td><p>Database accredited user name</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "userName"</br><span class="examples">Examples</span>: <pre class="brush: js;">$user="root"; | $user="administrator";</pre></td></tr>
+        <tr><td>$pass</br><span class="mandatory">Mandatory (except for sqlite)</span></td><td><p>Database accredited user password</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "password"</br><span class="examples">Examples</span>: <pre class="brush: js;">$pass="pwAdm46";</pre></td></tr>
+        <tr><td>$fields</br><span class="mandatory">Optional</span></td><td><p>Array of table fields that will be shown. If you don't use this parameter by default it will show all the fields of the selected table.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field1","field2", ...)</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span><pre class="brush: js;">$fields=array("name", "birthday", "email");</pre></td></tr>
+        <tr><td>$colNames</br><span class="mandatory">Optional</span></td><td><p>Use this parameter if you want to change one or several field names that will be displayed in the table header</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field1"=>"newName1", "field2"=>"newName2")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colNames=array(
+            "product"=>"Product Name", 
+            "p_cost"=>"Cost"
+            );</pre></td></tr>
+        <tr><td>$colSizes</br><span class="mandatory">Optional</span></td><td><p>Use this parameter when you want to set a specific width for one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field1"=>"width", "field2"=>"width")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colSizes=array(
+            "field1"=>"50px",
+            "field2"=>"30%",
+            "field3"=>"200em"
+            );</pre></td></tr>
+        <tr><td>$query</br><span class="mandatory">Optional</span></td><td><p>You can use this parameter as source of information instead of $table. This parameters consists of a sql query. If you will use the insert, update and delete options it will be necesary use the parameter $table as well.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: "select sql query"</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage2.php">Working Example 1</a></span> o <span class="exam"><a href="../Examples/example5/examplePage5.php">Working Example 2</a></span><pre class="brush: js;">$query="select * from books";</pre></td></tr>
+        <tr><td>$csvChar</br><span class="mandatory">Optional</span></td><td><p>Use this parameter to change the default csv character. This apply for the CSV export option.</p></br><span class="defaul_v">Default Value</span>: ","</br><span class="format">Format</span>: "character"</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage5.php">Working Example</a></span><pre class="brush: js;">$csvChar=";"; | $csvChar=":";</pre></td></tr>
+        <tr><td>$fileName</br><span class="mandatory">Optional</span></td><td><p>Use this option to change the default name of the generated exporter file.</p></br><span class="defaul_v">Default Value</span>: "EasyTables"</br><span class="format">Format</span>: "desiredFileName"</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage5.php">Working Example</a></span><pre class="brush: js;">$fileName="Books"; | $fileName="Products";</pre></td></tr>
+        <tr><td>$debugMode</br><span class="mandatory">Optional</span></td><td><p>When you enable this parameter, the sql queries that are being executed will be shown.</p></br><span class="defaul_v">Default Value</span>: false</br><span class="format">Format</span>: true|false</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage3.php">Working Example</a></span><pre class="brush: js;">$debugMode=true;</pre></td></tr>
+        <tr><td>$friendlyOutput</br><span class="mandatory">Optional</span></td><td><p>Use this parameters to replace a determinated string by an html element in a column, for example a picture.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>array("string"=>"replacement"))</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $friendlyOutput=array(
+            'in_stock'=>array(
+                '0'=>'<img src="false.png">',
+                '1'=>'<img src="true">'
+                )
+            );</pre></td></tr>
+        <tr><td>$colColorsOdd</br><span class="mandatory">Optional</span></td><td><p>Use this parameter to change the default color of the odd rows of a column.</p></br><span class="defaul_v">Defautl Value</span>: none</br><span class="format">Format</span>: array("field"=>"#hexcolor")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colColorsOdd=array(
+            "id"=>"#E38F33",
+            "price"=>"#E38F33"
+            );</pre></td></tr>
+        <tr><td>$colColorsEven</br><span class="mandatory">Optional</span></td><td><p>Use this parameter to change the default color of the even rows of one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>"#hexcolor")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colColorsEven=array(
+            "id"=>"#EDCF76",
+            "price"=>"#EDCF76"
+            );</pre></td></tr>
+        <tr><td>$colFontColors</br><span class="mandatory">Optional</span></td><td><p>Use this parameter to change the default font color of one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>"#hexcolor")</br><span class="examples">Examples</span>: 
+        <pre class="brush: js;">
+        $colFontColors=array(
+            "id"=>"#BBAAFF",
+            "price"=>"#AAFFBB"
+            );</pre></td></tr>
+        <tr><td>$colHeadColors</br><span class="mandatory">Optional</span></td><td><p>Use this parameter if you want to change the default background header color of one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>"#hexcolor")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colHeadColors=array(
+            "id"=>"#CF0707",
+            "price"=>"#CF0707",
+            "name"=>"#1527CA"
+            );</pre></td></tr>
+        <tr><td>$colOrderColors</br><span class="mandatory">Optional</span></td><td><p>With this parameter you can change the default background color of the active sort column.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("Even"=>"#hexcolor", "Odd"="#hexcolor")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colOrderColors=array(
+            "Even"=>"#7CE1F3",
+            "Odd"=>"#3ECAF9"
+            );</pre></td></tr>
+        <tr><td>$colOrderFontColors</br><span class="mandatory">Optional</span></td><td><p>With this parameter you can change the default font color of the active sort column.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("Even"=>"#hexcolor", "Odd"="#hexcolor")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/examplePage4.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colOrderFontColors=array(
+            "Even"=>"#000",	
+            "Odd"=>"#000"
+            );</pre></td></tr>
+        <tr><td>$colHeadFontColors</br><span class="mandatory">Optional</span></td><td><p>Use this parameter to change the default header font color of one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>"#hexcolor")</br><span class="examples">Examples</span>: 
+        <pre class="brush: js;">
+        $colHeadFontColors=array(
+            "id"=>"#000000",
+            "price"=>"#FFFF00"
+            );</pre></td></tr>
+        <tr><td>$colAlign</br><span class="mandatory">Optional</span></td><td><p>Change the default aligment of one or several columns.</p></br><span class="defaul_v">Default Value</span>: none</br><span class="format">Format</span>: array("field"=>"aligment")</br><span class="examples">Examples</span>: <span class="exam"><a href="../Examples/example5/examplePage5.php">Working Example</a></span>
+        <pre class="brush: js;">
+        $colAlign=array(
+            "id"=>"right",
+            "price"=>"center"
+            );</pre></td></tr>
+        </table>
+    </td></tr>
+    </table>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+/* =============================================================================
+resultTable Attributes
+========================================================================== */
+.resultTable{
+	margin:auto !important;
+	text-align:left;
+	color:#000;
+	border-collapse:collapse !important;
+	border-bottom:1px solid #BBB !important;
+	-moz-box-shadow:    0px 0px 4px 0px #000;
+	-webkit-box-shadow: 0px 0px 4px 0px #000;
+	box-shadow:         0px 0px 4px 0px #000;
+}
+
+.resultTable tr.header{
+	background:#000;
+	font-size: 16px;
+}
+
+/*Here you can chnage the defaul color for each even and odd row*/
+.resultTable tr:nth-child(odd){ background: #fff;}
+.resultTable tr:nth-child(even){ background: #ddd;}
+
+/*Here you can change the default background and font color of the header cells*/
+.resultTable th{
+	color:#fff;
+	background:#000;
+	cursor:pointer;
+	border-left:1px solid #BBB;
+}
+
+.resultTable td{
+	border-left:1px solid #BBB;
+    border-right:0px;
+}
+
+.resultTable td, .resultTable th{
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:5px;
+}
+
+.resultTable img{
+	max-width:100px;
+}
+
+.resultTable input[type='text']{
+	border:none;
+	background:none;
+	background-color:transparent;
+	color:inherit;
+}
+
+.painted, .resultTable tr:hover{
+	/*Here you can change the pointed row background and font color*/
+	background:#000 !important;
+	color:#FFF  !important;
+}
+
+.updt td{
+	border-bottom:#000 solid 2px;
+	border-top:#000 solid 2px;
+}
+
+.no_result{
+	padding-left:30px !important;
+	padding-bottom:10px !important;
+	padding-top:10px !important;
+}
+
+/* =============================================================================
+Global easyTable Attributes
+========================================================================== */
+
+.easyTableForm{	
+	/*Global Attributes*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	color:inherit;
+    font-size: 14px !important;
+	overflow:auto;
+	width:inherit;
+}
+
+.easyTableForm select{
+	max-width:75px;
+}
+
+.easyTableForm table{
+	margin:auto;
+}
+
+.pager, .search{
+	padding-top:5px;
+	padding-bottom:10px;
+}
+
+.easyTableForm .pager, .easyTableForm div.search{
+	margin:auto !important;
+	padding-right:0px !important;
+	padding-left:0px !important;
+}
+
+.pager td, .search td{
+	padding-right:0px !important;
+	padding-left:0px !important;
+}
+
+.search table, table.pager{
+	width:100%;
+}
+
+.easyTableForm table.not(.resultTable){
+	margin:auto;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width:inherit;
+}
+
+
+/* =============================================================================
+Modal Attributes
+========================================================================== */
+
+.modal {
+  color:#000;
+  top: 10%;
+  left: 50%;
+  width: 560px;
+  margin-left: -280px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+}
+
+.modal-footer {
+  text-align: right;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.updateModal table{
+	margin:auto;
+	border-collapse:collapse;
+}
+
+.updateModal table td{
+	padding:5px;
+	text-align:justify;
+}
+
+.updateModal table.dt tr{
+	border-bottom:1px solid #000;
+}
+
+.updateModal img{
+	max-width:400px;
+	max-height:500px;
+}
+
+/* =============================================================================
+Paginator Attributes
+========================================================================== */
+.easyTableForm .actual{
+	border: 1px solid #333;
+    font:12px/normal sans-serif;
+	text-shadow: 1px 1px 0 #000;
+    color: #fff;
+    background-color: #000;
+	padding: 0.4em 0.5em;
+	font-weight:bold;
+	border-radius: 0.2em;
+	-moz-box-shadow:    0px 0px 4px 0px #000;
+	-webkit-box-shadow: 0px 0px 4px 0px #000;
+	box-shadow:         0px 0px 4px 0px #000;
+}
+
+.easyTableForm .pag{
+	border: 1px solid #333;
+    font:12px/normal sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 0 #ddd;
+    color: #000;
+    background-color: #ddd;
+	padding: 0.4em 0.5em;
+	border-radius: 0.2em;
+	cursor:pointer;
+	-moz-box-shadow:    0px 0px 1px 0px #000;
+	-webkit-box-shadow: 0px 0px 1px 0px #000;
+	box-shadow:         0px 0px 1px 0px #000;
+}
+
+.pager .total{
+	display:none;
+}
+
+/* =============================================================================
+Global Buttons Attributes
+========================================================================== */
+
+.easyTableForm a.button{
+	max-width:60px;
+}
+
+.easyTableForm .button {
+    border: 1px solid #d4d4d4;
+    font:11px/normal sans-serif;
+	text-shadow: 1px 1px 0 #fff;
+    color: #333;
+    background-color: #ececec;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
+    background-image: -o-linear-gradient(#f4f4f4, #ececec);
+    background-image: linear-gradient(#f4f4f4, #ececec);
+}
+
+.easyTableForm .button:hover,
+.easyTableForm .button:focus,
+.easyTableForm .button:active,
+.easyTableForm .button.active {
+    border-color: #3072b3;
+    border-bottom-color: #2a65a0;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    background-color: #3c8dde;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(#666));
+    background-image: -moz-linear-gradient(#000, #666);
+    background-image: -o-linear-gradient(#000, #666);
+    background-image: linear-gradient(#000, #666);
+}
+
+.easyTableForm .button:active,
+.easyTableForm .button.active {
+    border-color: #2a65a0;
+    border-bottom-color: #3884cd;
+    background-color: #3072b3;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(#000));
+    background-image: -moz-linear-gradient(#666, #000);
+    background-image: -ms-linear-gradient(#666, #000);
+    background-image: -o-linear-gradient(#666, #000);
+    background-image: linear-gradient(#666, #000);
+}
+
+/* =============================================================================
+Icon Colors Attributes
+========================================================================== */
+
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url(glyphicons-halflings.png);
+  cursor:pointer;
+}
+
+.icon-white {
+  background-image: url('glyphicons-halflings-white.png');
+}
+
+.easyTableForm .button.arrowdown.icon:before { background-position: 0 -12px; }
+.easyTableForm .button.arrowdown.icon:hover:before,
+.easyTableForm .button.arrowdown.icon:focus:before,
+.easyTableForm .button.arrowdown.icon:active:before { background-position: -12px -12px; }
+
+.easyTableForm .button.add.icon:before { background-position: 0 -288px; }
+.easyTableForm .button.add.icon:hover:before,
+.easyTableForm .button.add.icon:focus:before,
+.easyTableForm .button.add.icon:active:before { background-position: -12px -288px; }
+
+.easyTableForm .button.remove.icon:before { background-position: 0 -60px; }
+.easyTableForm .button.remove.icon:hover:before,
+.easyTableForm .button.remove.icon:focus:before,
+.easyTableForm .button.remove.icon:active:before { background-position: -12px -60px; }
+
+.easyTableForm .button.search.icon:before { background-position: 0 -228px; }
+.easyTableForm .button.search.icon:hover:before,
+.easyTableForm .button.search.icon:focus:before,
+.easyTableForm .button.search.icon:active:before { background-position: -12px -228px; }
+
+.easyTableForm .button.edit.icon:before { background-position: 0 -264px; }
+.easyTableForm .button.edit.icon:hover:before,
+.easyTableForm .button.edit.icon:focus:before,
+.easyTableForm .button.edit.icon:active:before { background-position: -12px -264px; }
+
+.easyTableForm .button.trash.icon:before { background-position: 0 -336px; }
+.easyTableForm .button.trash.icon:hover:before,
+.easyTableForm .button.trash.icon:focus:before,
+.easyTableForm .button.trash.icon:active:before { background-position: -12px -336px; }
+
+.button.remove.icon:before { background-position: 0 -60px; }
+.button.remove.icon:hover:before,
+.button.remove.icon:focus:before,
+.button.remove.icon:active:before { background-position: -12px -60px; }
+
+.button.approve.icon:before { background-position: 0 -48px; }
+.button.approve.icon:hover:before,
+.button.approve.icon:focus:before,
+.button.approve.icon:active:before { background-position: -12px -48px; }
