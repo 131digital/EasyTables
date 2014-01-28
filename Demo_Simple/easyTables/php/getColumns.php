@@ -5,7 +5,7 @@
 			configFile: Array with the values of the row that will be inserted
 	*/
 
-	include_once("DBHelper.php");
+	include_once("DBHelper.class.php");
 	$dbhelper=new DBHelper($_REQUEST['configFile']);
 	$char=$dbhelper->character();
 	$esc=$dbhelper->escape();

@@ -66,7 +66,7 @@ $.prototype.easyTable=function (opciones){
 			firstFlagMode=false;
 		}
 		//The form is created and placed in the container in the web page
-		container.html('<form class="easyTableForm" action="'+phpRute+'exportFile.php" method="post"><div class="updateModal modal hide fade"></div><table><tr class="search"><tr><tr><td colspan="2" class="result"></td></tr></table>'+
+		container.html('<form class="easyTableForm" action="'+phpRute+'exportFile.class.php" method="post"><div class="updateModal modal hide fade"></div><table><tr class="search"><tr><tr><td colspan="2" class="result"></td></tr></table>'+
 			((exportOptions!=false)?'<input type="hidden" name="orderField"><input type="hidden" name="sense"><input type="hidden" name="configFile" value="'+configFile+'"><input type="hidden" name="actual">':'')+'</form>');
 		showSearch(); 
 		showTable();
@@ -76,7 +76,7 @@ $.prototype.easyTable=function (opciones){
 	    //This function do an ajax call with several parameters. Then it send the result of the ajax call to the function "showData"
 	    $.ajax({
 			type:"GET",
-			url:phpRute+"generateTable.php", 
+			url:phpRute+"generateTable.class.php", 
 			data:{"configFile":configFile, "search":((searchFields!=false)?container.find(".searchValue").val():""), "searchField":((searchFields!=false)?container.find(".searchField").val():""), "orderField":orderField, "sense":sense, "nResults":nResults, "showCheck":showCheck}, 
 			success:function(data){showData(data); container.find(".search").show()},
 			async:false,
@@ -381,7 +381,7 @@ $.prototype.easyTable=function (opciones){
 					for(j=0;j<newValues.length;j++){newValues2[j]=values[j];}
 					for(j=0;j<changes.length;j++){newValues2[changes[j]]=newValues[changes[j]];}
 					//Ajax call to update the data in a row
-					$.ajax({type:"GET", url:phpRute+"CUD.php", data:{"action":"Upd", "configFile":configFile, "fields[]":titles, "values[]":values, "newValues[]":newValues2}, success:function(e){
+					$.ajax({type:"GET", url:phpRute+"CUD.class.php", data:{"action":"Upd", "configFile":configFile, "fields[]":titles, "values[]":values, "newValues[]":newValues2}, success:function(e){
 						if(!String.prototype.trim){
 						  String.prototype.trim = function(){
 							return replace(/^\s+|\s+$/g, ''); 
@@ -446,7 +446,7 @@ $.prototype.easyTable=function (opciones){
 		var newValues=new Array(objects.size());
 		i=0;
 		objects.each(function(e) { newValues[i]=$(this).val(); i++;  });
-		$.get(phpRute+"CUD.php", {"action":"Ins", "configFile":configFile, "fields[]":titles, "values[]":newValues}, function(e){
+		$.get(phpRute+"CUD.class.php", {"action":"Ins", "configFile":configFile, "fields[]":titles, "values[]":newValues}, function(e){
 				if(!String.prototype.trim){
 				  String.prototype.trim = function(){
 					return replace(/^\s+|\s+$/g, ''); 
@@ -461,7 +461,7 @@ $.prototype.easyTable=function (opciones){
 					}
 					changePager(pageNumber,pageNumber);
 				}else{
-					alert(e.replace(/^\s+|\s+$/g, ''));
+					alert(e.replace(/(?:<[^>]+>)/gi, ''));
 				}
 		});
 	}
@@ -504,7 +504,7 @@ $.prototype.easyTable=function (opciones){
 						}else
 							firstFlag=false;
 					});
-					$.ajax({type:"GET", url:phpRute+"CUD.php", data:{"action":"Del", "configFile":configFile, "values[]":values, "fields[]":titles}, success:function(e){
+					$.ajax({type:"GET", url:phpRute+"CUD.class.php", data:{"action":"Del", "configFile":configFile, "values[]":values, "fields[]":titles}, success:function(e){
 							if(!String.prototype.trim){
 							  String.prototype.trim = function(){
 								return replace(/^\s+|\s+$/g, ''); 
@@ -536,7 +536,7 @@ $.prototype.easyTable=function (opciones){
 			newValues[i]=$(this).val();
 			i++;
 		});
-		$.get(phpRute+"CUD.php", {"action":"Upd", "configFile":configFile, "fields[]":titles, "values[]":values, "newValues[]":newValues}, function(e){
+		$.get(phpRute+"CUD.class.php", {"action":"Upd", "configFile":configFile, "fields[]":titles, "values[]":values, "newValues[]":newValues}, function(e){
 				if(!String.prototype.trim){
 				  String.prototype.trim = function(){
 					return replace(/^\s+|\s+$/g, ''); 
@@ -603,9 +603,9 @@ $.prototype.easyTable=function (opciones){
 	function changePager(actual, prev){
 	    //This function change the number of the pager and the info in the table according to the pager number
 		if((actual=="<<")||(actual==">>")){
-			$.get(phpRute+"generateTable.php", {"configFile":configFile, "actual":actual, "prev":prev, "search":((searchFields!=false)?container.find(".searchValue").val():""), "searchField":((searchFields!=false)?container.find(".searchField").val():""), "nResults":nResults, "orderField":orderField, "sense":sense, "showCheck":showCheck}, function(data){showData(data);});
+			$.get(phpRute+"generateTable.class.php", {"configFile":configFile, "actual":actual, "prev":prev, "search":((searchFields!=false)?container.find(".searchValue").val():""), "searchField":((searchFields!=false)?container.find(".searchField").val():""), "nResults":nResults, "orderField":orderField, "sense":sense, "showCheck":showCheck}, function(data){showData(data);});
 		}else{
-			$.get(phpRute+"generateTable.php", {"configFile":configFile, "actual":actual, "search":((searchFields!=false)?container.find(".searchValue").val():""), "searchField":((searchFields!=false)?container.find(".searchField").val():""), "nResults":nResults, "orderField":orderField, "sense":sense, "showCheck":showCheck}, function(data){showData(data);});
+			$.get(phpRute+"generateTable.class.php", {"configFile":configFile, "actual":actual, "search":((searchFields!=false)?container.find(".searchValue").val():""), "searchField":((searchFields!=false)?container.find(".searchField").val():""), "nResults":nResults, "orderField":orderField, "sense":sense, "showCheck":showCheck}, function(data){showData(data);});
 		}
 	}
 	

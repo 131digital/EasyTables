@@ -111,7 +111,7 @@
     	    <li>You can use a SQL query as information source. It allows you to display join queries and almost all sql queries result.</li>
     	    <li>It offers several parameters to customize the way the information is displayed. Ej. Which columns will be displayed, the column header name that will be shown, the width and color of each column, etc.</li>
     	    <li>Use ajax for a more interactive application.</li>
-    	    <li>Allows you to export the data in XLS, CSV, PDF and Excel file with only a  click.</li>
+    	    <li>Allows you to export the data in XLS, CSV, PDF and Excel(You'll need to include <a href="http://phpexcel.codeplex.com/">PHPExcel Class</a>) file with only a  click.</li>
     	    <li>You can configure a friendly display for the information.</li>
     	    <li>You can delete, insert and update the information in a interactive way.</li>
     	    <li>Very interactive tables with pager and sort options.</li>
@@ -123,6 +123,7 @@
     <tr><td colspan="2">
         <h2>Setting Up:</h2>
 		<p class="t">Copy the directory <strong>easyTables</strong> to the root directory of your web site</p>
+		<p class="t">If you want to enable the option to export to Excel files you'll need to download the <a href="http://phpexcel.codeplex.com/">PHPExcel Class</a>. After decompress the file copy the content of the directory <strong>"Classes/"</strong> inside the directory <strong>"easyTables/php/"</strong></p>
         <p class="t">The first thing you need to do is import the js and css files in the header of the file where you'll use this script. The second row corresponds to the default table style that you want to use. You can change <a href="../Examples/white-gray.php">white-gray.css</a> for example by <a href="../Examples/dark.php">dark.css</a> or use a css style that you created.</p>
         <pre class="brush: js;">
             &lthead&gt

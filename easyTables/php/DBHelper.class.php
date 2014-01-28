@@ -1,5 +1,14 @@
 <?php
 	
+	/*******************************************************************************
+	* DBHelper                                                                     *
+	*                                                                              *
+	* Version: 1.0                                                                 *
+	* Date:    2014-01-26                                                          *
+	* Author:  enri_pin                                                            *
+	* Email:   enri_pin@yahoo.com                                                  *
+	*******************************************************************************/
+	
 	class dbHelper{
 	
 		var $db, $dbname, $host, $port, $user, $pass, $query, $table, $csvChar, $fileName, $debugMode;
